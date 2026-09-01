@@ -4,7 +4,22 @@
 *.suo
 *.userosscache
 *.sln.docstates
+bin/
+obj/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Node
+node_modules/
+npm-debug.log*
 
 # OS generated files
 .DS_Store
 Thumbs.db
+

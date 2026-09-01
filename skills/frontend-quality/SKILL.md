@@ -1,8 +1,8 @@
 ---
 name: frontend-quality
-description: Project-neutral frontend implementation and review quality gate distilled from the cloned Front-End Checklist corpus.
-version: 2.0.0
-source: /Google Drive/Front-End-Checklist
+description: Project-neutral frontend implementation and review quality gate with a bundled, portable checklist for standalone use.
+version: 2.2.0
+source: bundled portable checklist
 ---
 
 # Frontend Quality
@@ -12,7 +12,9 @@ It is intentionally compact: do not load hundreds of micro-rules unless a specif
 
 Detailed source relationship and escalation guidance live in:
 
-- `.agents/skills/frontend-quality/references/front-end-checklist.md`
+- `references/front-end-checklist.md`
+- `references/portable-checklist.md` for the bundled, standalone audit corpus
+- `references/application-ui-checklist.md` for authenticated, API-driven, realtime, optimistic, upload, or chat interfaces
 
 ## Responsibility boundary
 
@@ -91,6 +93,14 @@ Do not load all of those automatically.
 
 - Cover happy path plus relevant loading, empty, failure, keyboard/accessibility, and responsive states.
 
+### Application UI and realtime state
+
+- Treat accepted, pending, completed, failed, cancelled, and reconciled as distinct states when the backend contract distinguishes them.
+- Verify optimistic snapshots, rollback, late responses, duplicate actions, cache convergence, and server-truth reconciliation.
+- Check subscription cleanup, reconnect, deduplication, ordering, stale events, and React Strict Mode behavior for realtime features.
+- Verify authorization and status-specific UX through the actual API/Gateway contract rather than inferred frontend assumptions.
+- For chat, uploads, authenticated flows, or distributed operations, load `references/application-ui-checklist.md`.
+
 ## Known safe patterns
 
 Do not automatically flag:
@@ -118,7 +128,7 @@ Escalate beyond this compact skill when:
 - a critical/high finding needs exact remediation;
 - accessibility, security, privacy, SEO, i18n, performance, or testing requires category-specific depth.
 
-Then consult `.agents/skills/frontend-quality/references/front-end-checklist.md` and retrieve only the relevant rule/category from the cloned Front-End-Checklist source. If its MCP retrieval tools are available, prefer exact retrieval over copying the whole corpus into context.
+Then consult `references/front-end-checklist.md` and load only the relevant category from `references/portable-checklist.md`. External retrieval tools may supplement an audit when available, but the bundled checklist is the repository-owned source required to work in an offline clone.
 
 ## Finding format
 

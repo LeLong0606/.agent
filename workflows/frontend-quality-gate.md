@@ -1,7 +1,7 @@
 # Frontend Quality Gate
 
 Run this workflow before declaring frontend/UI work complete.
-The default quality source is `.agents/skills/frontend-quality/SKILL.md`, distilled from the cloned `/Google Drive/Front-End-Checklist` corpus.
+The default quality source is `skills/frontend-quality/SKILL.md` with its bundled portable checklist.
 
 ## 1. Establish scope
 
@@ -15,7 +15,7 @@ A quality audit does not compensate for missing requested functionality.
 
 ## 3. Quality review
 
-Use `.agents/skills/frontend-quality/SKILL.md` and review applicable areas:
+Use `skills/frontend-quality/SKILL.md` and review applicable areas:
 
 - semantics/HTML
 - accessibility/keyboard/focus
@@ -23,6 +23,7 @@ Use `.agents/skills/frontend-quality/SKILL.md` and review applicable areas:
 - forms
 - images/layout shift
 - JavaScript/rendering/performance
+- API-driven application state, optimistic behavior, and realtime convergence when applicable
 - security
 - metadata/SEO when route-owned
 - tests
@@ -38,7 +39,9 @@ Before reporting or fixing a finding:
 3. Remove preference-only or context-free findings.
 4. Prefer silence over weak nitpicks.
 
-For standards-sensitive or ambiguous findings, consult `.agents/skills/frontend-quality/references/front-end-checklist.md` and retrieve only the relevant source rule/category.
+For standards-sensitive or ambiguous findings, consult `skills/frontend-quality/references/front-end-checklist.md` and load only the relevant category from the bundled portable checklist.
+
+For authenticated, API-driven, realtime, optimistic, upload, or chat work, also load `skills/frontend-quality/references/application-ui-checklist.md` and verify only the applicable state transitions and failure modes.
 
 ## 5. Fix and re-verify
 

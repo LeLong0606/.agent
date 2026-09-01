@@ -1,23 +1,18 @@
 # Front-End Checklist Reference
 
-## Source of truth
+## Source relationship
 
-The detailed source corpus is the cloned repository at:
+This repository's runtime source of truth is the bundled
+`portable-checklist.md` in this reference directory.
 
-`/Google Drive/Front-End-Checklist`
+The skill was informed by an external Front-End Checklist corpus covering 385 rules, but it has no runtime dependency on that checkout, its location, or its MCP service. Do not add machine-specific source paths. External retrieval may supplement the bundled checklist when available; it must never be required for a cloned `.agent` workspace to function.
 
-Primary global entry point in the clone:
+## How this repository uses the source
 
-`/Google Drive/Front-End-Checklist/skills/frontend-checklist-global/SKILL.md`
+`../SKILL.md` is the compact default runtime skill.
+This reference preserves the high-value review policy and tells the agent when to load the bundled detailed checklist.
 
-The source global skill connects one entry point to 385 rules and recommends retrieval rather than recalling/copying the whole rule corpus into context.
-
-## How `.agents` uses the source
-
-`.agents/skills/frontend-quality/SKILL.md` is the compact default runtime skill.
-This reference preserves the source's high-value review policy and tells the agent when to escalate to the detailed clone.
-
-Do **not** copy all individual Front-End-Checklist skill directories into `.agents/skills`.
+Do **not** install hundreds of individual checklist micro-skills into `skills/`.
 
 ## Source coverage
 
@@ -87,7 +82,7 @@ Use only the additional skill that contributes unique depth:
 
 ## Deep retrieval workflow
 
-When the detailed Front-End-Checklist MCP/tooling is available:
+When compatible external checklist retrieval tooling is available:
 
 1. Use focused code review first for inspected code.
 2. Search rules before giving standards-sensitive accessibility/performance/SEO/security/images/privacy/i18n/testing recommendations.
@@ -95,7 +90,8 @@ When the detailed Front-End-Checklist MCP/tooling is available:
 4. Use full workflow/checklist retrieval only for broad audits.
 5. Audit a public URL only when rendered-page evidence is useful.
 
-When MCP tooling is not available, use the cloned source files directly and read only the relevant category/rule.
+When MCP tooling is not available, read the relevant category in
+`portable-checklist.md` in this reference directory.
 
 ## Evaluation standard
 

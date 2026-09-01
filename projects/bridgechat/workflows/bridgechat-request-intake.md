@@ -15,7 +15,7 @@ Run this before brain lookup, investigation, planning, implementation, UI work, 
 
 Extract and restate:
 
-- **Intent:** investigate, plan, build backend, build UI, fix defect, verify, hand off, commit/push, deploy, or destructive operation.
+- **Intent:** investigate, plan, build backend, build UI, polish UI, fix defect, refactor, migrate, verify, hand off, commit/push, deploy, or destructive operation.
 - **Target:** repository, microservice, shared library, frontend feature, endpoint, event, database, queue, or screen.
 - **Desired outcome:** the observable behavior that must exist when work is complete.
 - **Inputs and constraints:** examples, status codes, limits, security rules, localization, compatibility, deadlines, explicit exclusions, and approval gates.
@@ -71,6 +71,9 @@ Choose one primary chain from `.agents/projects/bridgechat/workflows/`:
 - Plan-only request: `bridgechat-plan.md`.
 - Verification/review only: `bridgechat-verify.md`.
 - Handoff only: `bridgechat-handoff.md`.
+- Schema/data/API/event/realtime/configuration/dependency transition: `bridgechat-migrate.md`.
+- Behavior-preserving restructuring with no feature change: `bridgechat-refactor.md`.
+- Polish, redesign, visual audit, responsive/accessibility cleanup of existing UI: `bridgechat-ui-polish.md`.
 
 Always prepend `bridgechat-brain-context.md`. Add `bridgechat-microservice-orchestration.md` for `DISTRIBUTED` or cross-boundary `CONTRACT` work. Always append `bridgechat-text-integrity.md` and verification before completion.
 

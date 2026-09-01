@@ -25,9 +25,27 @@ BridgeChat-specific rules override generic rules where they intentionally define
 
 For frontend implementation, review, debugging, or UI integration, use `.agents/skills/frontend-quality/SKILL.md` and `.agents/workflows/frontend-quality-gate.md` when relevant.
 
+## Generic Workflows
+
+For projects without a profile, start with `workflows/request-intake.md` and route to:
+
+- Feature delivery: `workflows/build-feature.md`
+- UI delivery: `workflows/build-ui.md`
+- Defect fixing: `workflows/fix-error.md`
+- Behavior-preserving refactor: `workflows/safe-refactor.md`
+- Schema/data/API/protocol/dependency transition: `workflows/migration.md`
+- Verification/review: `workflows/verify.md`
+- Video, motion, slideshow, or media production: `workflows/media-production.md`
+
+Natural-language examples for all shared and BridgeChat workflows are maintained in `workflows/natural-language-triggers.md`.
+
 ## Skill Selection Policy
 
 - Skills are a shared library unless a project profile explicitly owns them.
+- When importing a new skill or corpus, first extract only the reusable guidance into `skills/`, `core/`, or `workflows/`.
+- Put BridgeChat-specific application, architecture, localization, contract, verification, and orchestration rules only under `projects/bridgechat/`.
+- Shared skills and workflows must remain usable without loading a BridgeChat project profile.
+- BridgeChat workflows may compose and specialize shared skills; they must not push BridgeChat assumptions back into the shared layer.
 - Do not load the full skill catalog.
 - Prefer one primary skill per concern and add supporting skills only when they produce a distinct decision or verification step.
 - Do not move framework/language skills into a project simply because that project currently uses them.

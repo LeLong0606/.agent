@@ -13,6 +13,9 @@ Then select the appropriate workflow:
 - Backend/full-stack feature: `.agents/projects/bridgechat/workflows/bridgechat-build-feature.md`
 - Frontend/UI feature: `.agents/projects/bridgechat/workflows/bridgechat-build-ui.md`
 - Error/4xx/5xx/stack trace/log issue: `.agents/projects/bridgechat/workflows/bridgechat-fix-error.md`
+- Schema/data/API/event/realtime/config/dependency migration: `.agents/projects/bridgechat/workflows/bridgechat-migrate.md`
+- Behavior-preserving structural change: `.agents/projects/bridgechat/workflows/bridgechat-refactor.md`
+- Existing UI visual/UX polish: `.agents/projects/bridgechat/workflows/bridgechat-ui-polish.md`
 
 Each parent workflow preserves the BridgeChat chain for brain context, skill routing, investigation, implementation, verification, handoff, text integrity, and microservice orchestration where applicable.
 

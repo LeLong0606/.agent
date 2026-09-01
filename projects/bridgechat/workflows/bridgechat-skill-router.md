@@ -20,17 +20,21 @@ Always use BridgeChat brain context and `bridgechat-text-integrity` where requir
 | Auth/PII/upload | defensive security skill first (`backend-security-defense` / `frontend-security-defense` / `vulnerability-scanner`); `red-team-tactics` only when explicitly appropriate |
 | React component/state/data structure | `frontend-architecture` |
 | Visible UI quality/accessibility | `frontend-quality`; add `frontend-design` for visual-design decisions |
+| Deliberate UI polish or visual audit | `impeccable`; add `animate` or one matching `gsap-*` skill only when motion is explicitly in scope |
 | Tailwind/shadcn/Radix implementation detail | `ui-styling` |
 | React/Next performance/framework behavior | `nextjs-react-expert` |
 | Vercel Web Interface Guidelines specifically | `web-design-guidelines` opt-in |
 | Frontend translations | `i18n-localization`; `bridgechatwebreact/public/locales/**` only |
 | Backend localization | `i18n-localization`; `BridgeChat.SharedLibraries/Core.Localization/Resources/*.json` only |
 | Defect/4xx/5xx/race/intermittent issue | `systemic-debugging`; add `investigate` for evidence gathering |
+| Narrow proven bug fix | add `surgical-patch` after root cause is established |
+| Behavior-preserving structural cleanup | `safe-refactor` with before/after regression proof |
+| Schema/data/API/protocol/dependency transition | `migration`; combine with BridgeChat rollout and compatibility rules |
 | Test strategy | `testing-patterns` |
 | Test-first implementation | `tdd-workflow` |
 | Browser/E2E proof | `webapp-testing` |
 | Completion proof | `verify-changes`; add `lint-and-validate` where applicable |
 
-For BridgeChat frontend work, the generic `.agents/workflows/frontend-quality-gate.md` is the default quality gate and uses the cloned Front-End-Checklist as its detailed source corpus.
+For BridgeChat frontend work, the generic `workflows/frontend-quality-gate.md` is the default quality gate and uses the bundled portable checklist as its detailed source corpus.
 
 Research may be parallel. The main agent must synthesize ownership/contracts before assigning writes. Never let workers edit the same file concurrently. Do not commit, push, deploy, reset data, or delete volumes unless explicitly requested.

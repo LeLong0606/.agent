@@ -16,7 +16,7 @@ Default project: bridgechatwebreact.
 
 1. Run `bridgechat-request-intake` to identify the requested screen, entry point, backend dependencies, UX states, risks, and skills.
 2. Run `bridgechat-brain-context` using bridgechatwebreact, the feature name, and related backend services.
-3. Use `frontend-architecture` + `frontend-quality` as the normal frontend baseline. Add only the narrowly relevant supporting skills: `frontend-design` for visual-design work, `ui-styling` for actual Tailwind/shadcn/Radix detail, `nextjs-react-expert` for React/Next performance/framework issues, `i18n-localization` when text changes, and `webapp-testing` for browser/E2E proof.
+3. Use `frontend-architecture` + `frontend-quality` as the normal frontend baseline. Add only the narrowly relevant supporting skills: `frontend-design` for visual-design work, `impeccable` for a deliberate polish/visual-audit pass, `ui-styling` for actual Tailwind/shadcn/Radix detail, `animate` or one matching `gsap-*` skill when motion is explicitly in scope, `nextjs-react-expert` for React/Next performance/framework issues, `i18n-localization` when text changes, and `webapp-testing` for browser/E2E proof.
 4. Inspect the existing feature tree, design tokens, reusable primitives, routes, API clients, hooks, stores/cache, error handling, realtime subscriptions, and neighboring screens.
 5. Read the real backend Controller/request/response/event contracts through Gateway. Never infer the contract from stale frontend code.
 6. If multiple services/events participate, run the microservice orchestration workflow and map REST plus realtime convergence.
@@ -51,7 +51,7 @@ Backend API/log/validation localization remains exclusively in `BridgeChat.Share
 
 ## Phase 3 — Frontend quality gate and proof
 
-1. Run the generic `.agents/workflows/frontend-quality-gate.md`. Its detailed source corpus is the cloned `/Google Drive/Front-End-Checklist` repository through `.agents/skills/frontend-quality/`.
+1. Run the generic `workflows/frontend-quality-gate.md` and its `skills/frontend-quality/references/application-ui-checklist.md` profile. BridgeChat UI work is API-driven and realtime, so this application profile is part of the normal gate rather than an optional website audit.
 2. Run typecheck, scoped lint, component/unit tests, and production build.
 3. Use browser/E2E tooling when available. Exercise the complete click path at desktop and mobile widths.
 4. Inspect the visible DOM result, focus behavior, browser console, network requests, status-specific messages, optimistic rollback, and realtime reconciliation.

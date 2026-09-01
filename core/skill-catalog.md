@@ -53,6 +53,7 @@ This registry controls routing priority without rewriting or deleting vendor ski
 | `design` | PRIMARY | Brand/logo/CIP/banner/social/slides and non-app visual artifact routing. Not the default application-UI skill. |
 | `design-system` | SUPPORTING | Tokens/specs/design-system implementation. |
 | `brand` / `brand-guidelines` | SUPPORTING | Brand-specific work. |
+| `impeccable` | SPECIALIZED | Comprehensive interface design/polish workflow with detectors and live tooling; use for deliberate visual-quality passes. |
 | `design-review` | SPECIALIZED | gstack visual QA/fix workflow. |
 | `design-shotgun` | SPECIALIZED | gstack multi-variant exploration workflow. |
 | `design-consultation` | SPECIALIZED | gstack DESIGN.md / design-system discovery workflow. |
@@ -80,12 +81,64 @@ This registry controls routing priority without rewriting or deleting vendor ski
 | `coordinator-mode` | SPECIALIZED | Multi-domain orchestration only when needed. |
 | `parallel-agents` | SPECIALIZED | Parallelizable work with non-overlapping writes. |
 
+## Browser automation and research
+
+| Skill | Status | Routing note |
+|---|---|---|
+| `agent-browser` | SPECIALIZED | Browser CLI workflow; use its focused companion skill for automation, debugging, E2E, scraping, iOS, or visual work. |
+| `agent-browser-automate` / `agent-browser-e2e` | SPECIALIZED | Browser automation and E2E flows when the agent-browser runtime is available. |
+| `agent-browser-debug` / `agent-browser-visual` | SPECIALIZED | Browser diagnosis and visual evidence. |
+| `agent-browser-scrape` | SPECIALIZED | Structured browser extraction when permitted and appropriate. |
+| `last30days` | SPECIALIZED | Time-sensitive multi-source research with its own setup/runtime requirements. |
+
+## Motion and media
+
+| Skill | Status | Routing note |
+|---|---|---|
+| `animate` | SUPPORTING | General interface motion guidance when animation is part of the requested experience. |
+| `gsap-*` | SPECIALIZED | Load only the matching GSAP concern: setup, scroll, text, SVG, canvas, interaction, optimization, test, or VFX. |
+| `motion-doctrine` / `seam-craft` / `cut-the-curve` | SPECIALIZED | Focused motion-system and transition craft. |
+| `captions-overlay` / `changelog-video` / `remotion-motion-graphics` | SPECIALIZED | Video/caption/motion-graphics production with the required media runtime. |
+
+## Product and marketing
+
+The imported marketing skills are opt-in. Select one narrow capability such as `marketing-plan`, `product-marketing`, `analytics`, `seo-audit`, `copywriting`, `pricing`, `launch`, `onboarding`, or `churn-prevention`; do not load the full marketing collection.
+
+## Imported workflow suites
+
+- `Claude-Skills` planning/review/execution skills are SPECIALIZED. Prefer existing primary workspace workflows when they cover the same concern.
+- `ponytail-*` skills are SPECIALIZED codebase-improvement workflows; load only when explicitly useful.
+- `humanizer`, `graphify`, and `i-have-adhd` are opt-in transformations/work styles, not default engineering companions.
+
+## Scoped implementation workflows
+
+| Skill | Status | Routing note |
+|---|---|---|
+| `surgical-patch` | SUPPORTING | Narrow bug or small behavior change with regression proof and preserved surrounding behavior. |
+| `safe-refactor` | SUPPORTING | Behavior-preserving extraction, consolidation, ownership move, or cleanup. |
+| `migration` | SUPPORTING | Compatibility-safe schema, data, API, protocol, configuration, or dependency transition. |
+| `lean-build` | SPECIALIZED | Feature slices with high overbuilding risk and an explicit stop condition. |
+| `investigate-first` | COMPATIBILITY | Evidence-ranked investigation style; prefer `systemic-debugging` plus `investigate` for normal routing. |
+| `verify-and-stop` | COMPATIBILITY | Narrow validation-only workflow; prefer `verify-changes` unless its strict stop boundary is specifically useful. |
+| `caveman-explore` | SPECIALIZED | Read-only compressed repository exploration after direct search is insufficient. |
+
+## HyperFrames media suite
+
+`hyperframes` is the specialized entry point for HyperFrames video or motion-composition work. Load only its routed companion, such as `product-launch-video`, `pr-to-video`, `faceless-explainer`, `embedded-captions`, `talking-head-recut`, `music-to-video`, `slideshow`, `motion-graphics`, `hyperframes-animation`, `hyperframes-audio`, `media-use`, or `remotion-to-hyperframes`. Do not load the full suite together.
+
+## Upstream synchronization
+
+Source repositories and selection decisions live in `sources/skill-sources.json`.
+All installed skill payloads are copied into `skills/` and work without the upstream repositories. After updating optional upstream clones, run `scripts/sync-skill-sources.ps1 -Mode Audit -SourceRoot <path-to-clones>`, then use `-Mode Sync` with the same source root to import only new managed skills. `AGENT_SKILL_SOURCE_ROOT` may provide that path. Existing skills remain review-gated so local and BridgeChat adaptations are not overwritten.
+
 ## Front-End Checklist ownership
 
-The cloned `/Google Drive/Front-End-Checklist` repository is a source corpus, not a set of 385 default runtime skills.
+The Front-End Checklist material is distilled into a portable local corpus, not installed as hundreds of default runtime skills.
 
-- `.agents/skills/frontend-quality/SKILL.md` is the compact default entry point.
-- `.agents/skills/frontend-quality/references/front-end-checklist.md` records the distilled policy and source relationship.
+- `skills/frontend-quality/SKILL.md` is the compact default entry point.
+- `skills/frontend-quality/references/front-end-checklist.md` records the distilled policy and source relationship.
+- `skills/frontend-quality/references/portable-checklist.md` provides the standalone detailed fallback.
+- `skills/frontend-quality/references/application-ui-checklist.md` adds focused quality checks for API-driven, realtime, optimistic, upload, and chat interfaces.
 - Individual cloned checklist skills/rules are retrieved only when a focused audit requires them.
 
 ## Migration rule

@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "collections": [
+    {
+      "repo": "agent-browser-skill",
+      "root": "skills",
+      "mode": "new-only",
+      "reason": "Reusable browser automation, debugging, scraping, E2E, and visual workflows."
+    },
+    {
+      "repo": "Claude-Skills",
+      "root": "skills",
+      "mode": "new-only",
+      "reason": "Reusable planning, debugging, testing, review, and execution workflows; existing names require manual merge."
+    },
+    {
+      "repo": "gsap-cookbook",
+      "root": "skills",
+      "mode": "new-only",
+      "reason": "Focused GSAP implementation and performance skills for frontend motion work."
+    },
+    {
+      "repo": "marketingskills",
+      "root": "skills",
+      "mode": "new-only",
+      "reason": "Project-neutral product, analytics, content, SEO, conversion, and growth skills for future products."
+    },
+    {
+      "repo": "hyperframes",
+      "root": ".agents/skills",
+      "mode": "new-only",
+      "reason": "Import only canonical skill directories, not the large media/demo repository."
+    },
+    {
+      "repo": "hyperframes",
+      "root": "skills",
+      "mode": "new-only",
+      "reason": "Reusable canonical video, motion, caption, media, Figma, slideshow, and product-launch workflows without the full repository payload."
+    },
+    {
+      "repo": "ponytail",
+      "root": "skills",
+      "mode": "new-only",
+      "reason": "Reusable codebase quality and improvement workflows."
+    }
+  ],
+  "singles": [
+    {
+      "repo": "caveman",
+      "path": "skills/caveman-explore",
+      "target": "caveman-explore",
+      "mode": "new-only"
+    },
+    {
+      "repo": "caveman",
+      "path": "skills/investigate-first",
+      "target": "investigate-first",
+      "mode": "new-only"
+    },
+    {
+      "repo": "caveman",
+      "path": "skills/lean-build",
+      "target": "lean-build",
+      "mode": "new-only"
+    },
+    {
+      "repo": "caveman",
+      "path": "skills/migration",
+      "target": "migration",
+      "mode": "new-only"
+    },
+    {
+      "repo": "caveman",
+      "path": "skills/safe-refactor",
+      "target": "safe-refactor",
+      "mode": "new-only"
+    },
+    {
+      "repo": "caveman",
+      "path": "skills/surgical-patch",
+      "target": "surgical-patch",
+      "mode": "new-only"
+    },
+    {
+      "repo": "caveman",
+      "path": "skills/verify-and-stop",
+      "target": "verify-and-stop",
+      "mode": "new-only"
+    },
+    {
+      "repo": "animate-skill",
+      "path": ".",
+      "target": "animate",
+      "mode": "new-only"
+    },
+    {
+      "repo": "claude-remotion-skill",
+      "path": "remotion-motion-graphics",
+      "target": "remotion-motion-graphics",
+      "mode": "new-only"
+    },
+    {
+      "repo": "graphify",
+      "path": "skills/graphify",
+      "target": "graphify",
+      "mode": "new-only"
+    },
+    {
+      "repo": "humanizer",
+      "path": "skills/humanizer",
+      "target": "humanizer",
+      "mode": "new-only"
+    },
+    {
+      "repo": "i-have-adhd",
+      "path": "skills/i-have-adhd",
+      "target": "i-have-adhd",
+      "mode": "new-only"
+    },
+    {
+      "repo": "last30days-skill",
+      "path": "skills/last30days",
+      "target": "last30days",
+      "mode": "new-only"
+    },
+    {
+      "repo": "skill-creator",
+      "path": ".",
+      "target": "skill-creator",
+      "mode": "new-only"
+    }
+  ],
+  "manualReview": [
+    {
+      "repo": "taste-skill",
+      "source": ".",
+      "target": "taste",
+      "decision": "Keep local; SKILL.md is byte-identical to upstream."
+    },
+    {
+      "repo": "ui-ux-pro-max-skill",
+      "source": ".claude/skills/ui-ux-pro-max",
+      "target": "ui-ux-pro-max",
+      "decision": "Keep the adapted local skill; upstream assumes CLAUDE_PLUGIN_ROOT while local routing and scripts are Codex-compatible."
+    },
+    {
+      "repo": "Front-End-Checklist",
+      "source": "skills/frontend-checklist-global",
+      "target": "frontend-quality",
+      "decision": "Distilled into the portable frontend-quality references and BridgeChat application UI gate."
+    }
+  ],
+  "reviewedUpdates": [
+    {
+      "repo": "impeccable",
+      "source": ".agent/skills/impeccable",
+      "target": "impeccable",
+      "decision": "Updated local payload from upstream; preserve this as a reviewed update rather than an automatic overwrite."
+    },
+    {
+      "repo": "Claude-Skills",
+      "source": "skills/brainstorming",
+      "target": "brainstorming",
+      "decision": "Keep local: upstream hard-gates every change on design approval and commit, conflicting with the workspace autonomy policy."
+    },
+    {
+      "repo": "Claude-Skills",
+      "source": "skills/systematic-debugging",
+      "target": "systematic-debugging",
+      "decision": "Keep compatibility alias; reusable cross-layer depth already lives in systemic-debugging."
+    },
+    {
+      "repo": "skill-creator",
+      "source": ".",
+      "target": "skill-creator",
+      "decision": "Keep local: it includes the richer Codex validation and evaluation toolchain."
+    }
+  ],
+  "excludedRepositories": [
+    {
+      "repo": "Front-End-Checklist",
+      "reason": "Hundreds of micro-skills are distilled into frontend-quality instead of being installed individually."
+    },
+    {
+      "repo": "gstack",
+      "reason": "Most useful capabilities are already represented locally; remaining candidates depend on the gstack/Claude runtime, shared binaries, hooks, or generated preambles."
+    },
+    {
+      "repo": "caveman",
+      "reason": "Generic engineering workflows were imported individually; Caveman Cloud, compression-mode, and plugin-specific skills remain excluded."
+    },
+    {
+      "repo": "claude-code-codex-skill",
+      "reason": "Designed for Claude-to-Codex delegation rather than the current Codex runtime."
+    },
+    {
+      "repo": "claude-hud",
+      "reason": "No SKILL.md entry point."
+    },
+    {
+      "repo": "find-skill",
+      "reason": "Existing find-skill capability requires merge review rather than replacement."
+    }
+  ]
+}
