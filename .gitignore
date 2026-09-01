@@ -1,0 +1,10 @@
+# Visual Studio / IDE temporary and cache files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# OS generated files
+.DS_Store
+Thumbs.db
